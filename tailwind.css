@@ -1,0 +1,179 @@
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .all-\[unset\] {
+    all: unset;
+  }
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+
+    --card: transparent;
+    --card-foreground: 222.2 47.4% 11.2%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 215 20.2% 65.1%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+
+    --muted: 223 47% 11%;
+    --muted-foreground: 215.4 16.3% 56.9%;
+
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --popover: 224 71% 4%;
+    --popover-foreground: 215 20.2% 65.1%;
+
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+
+    --card: transparent;
+    --card-foreground: 213 31% 91%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 1.2%;
+
+    --secondary: 222.2 47.4% 11.2%;
+    --secondary-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 216 34% 17%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+  @media (max-width: 768px) {
+    /* Header Navigation */
+    header nav {
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 1rem;
+    }
+
+    /* Main Logo Section */
+    .logo-section {
+      flex-direction: column;
+      padding: 2rem 1rem;
+    }
+
+    /* Verification Section Grid */
+    .verification-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Pink Boxes Section */
+    .pink-boxes {
+      flex-direction: column;
+    }
+    .pink-boxes > div {
+      width: 100% !important;
+      margin-bottom: 1rem;
+    }
+
+    /* System Info Section */
+    .system-info {
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .system-info > div {
+      width: 100% !important;
+      text-align: center !important;
+    }
+
+    /* Footer */
+    footer {
+      flex-direction: column;
+      gap: 2rem;
+      text-align: center;
+    }
+    footer img {
+      width: 100% !important;
+      max-width: 300px;
+      margin: 0 auto;
+    }
+
+    /* General spacing adjustments */
+    .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    /* Text size adjustments */
+    h1, h2, h3 {
+      font-size: 1.5rem !important;
+    }
+
+    /* Button sizes */
+    button {
+      padding: 0.5rem 1rem !important;
+      font-size: 0.875rem !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    /* Even smaller screens */
+    .verification-grid {
+      grid-template-columns: 1fr;
+    }
+
+    /* Make sure images don't overflow */
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  @font-face {
+  font-family: 'InterThin';
+  src: url('/fonts/Inter_18pt-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
