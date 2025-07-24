@@ -9,6 +9,8 @@ import { useEffect, useState } from "react";
 import Features from "../../components/ui/features";
 import { Menu, X } from "lucide-react";
 import Header from "../../components/ui/Header";
+import Signup from "../../components/ui/Signup";
+
 
 
 export const Frame = (): JSX.Element => {
@@ -219,6 +221,10 @@ def terminate_service():
       </div>
     </div>
   </div>
+</section>
+
+<section className=" sm: top-0">
+  <Signup/> 
 </section>
 
       {/* Verification Section */}
