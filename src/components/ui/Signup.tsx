@@ -109,7 +109,7 @@ if (!existingSnapshot.empty) {
         <form onSubmit={handleSignup} className="space-y-4">
           <input
   type="text"
-  placeholder="Enter Telegram username (e.g., @username)"
+  placeholder="Enter Telegram username "
   required
   className="w-full px-3 py-2 text-black rounded"
   value={telegram}
@@ -139,10 +139,11 @@ if (!existingSnapshot.empty) {
               🧾 <strong>Your Position:</strong> {position}
             </p>
             <p>
-              🔗 <strong>Referral Link:</strong>
+              🔗 <strong>Referral Code:</strong>
               <br />
               <span className="break-all text-cyan-400">
-                {window.location.origin}/signup?ref={generatedCode}
+                {/* {window.location.origin}/signup?ref={generatedCode} */}
+                {generatedCode}
               </span>
             </p>
           </div>
