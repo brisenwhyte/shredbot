@@ -19,12 +19,12 @@ const generateCode = (): string =>
 
 
 const Signup: React.FC = () => {
-  const [email, setEmail] = useState<string>("");
+  const [telegram, setTelegram] = useState<string>("");
   const [referralCode, setReferralCode] = useState<string>("");
   const [position, setPosition] = useState<number | null>(null);
   const [generatedCode, setGeneratedCode] = useState<string>("");
   const [searchParams] = useSearchParams();
-  const [standings, setStandings] = useState<{ email: string; position: number }[]>([]);
+  const [standings, setStandings] = useState<{ telegram: string; position: number }[]>([]);
 
   useEffect(() => {
     const ref = searchParams.get("ref");
@@ -36,18 +36,23 @@ const Signup: React.FC = () => {
       const usersRef = collection(db, "users");
       const q = query(usersRef, orderBy("position", "asc"));
       const snapshot = await getDocs(q);
-      const topUsers = snapshot.docs.map(doc => {
-        const data = doc.data();
-        return {
-          email: data.email,
-          position: data.position
-        };
-      });
+     const topUsers = snapshot.docs.map(doc => {
+  const data = doc.data();
+  return {
+    telegram: data.telegram,
+    position: data.position
+  };
+});
       setStandings(topUsers);
     };
 
     fetchLeaderboard();
   }, []);
+
+  const obfuscate = (username: string) =>
+  username.length > 4
+    ? username.slice(0, 2) + "****" + username.slice(-2)
+    : username[0] + "***";
 
   
 
@@ -57,12 +62,12 @@ const Signup: React.FC = () => {
     const usersRef = collection(db, "users");
 
     // Check if email already exists
-    const emailQuery = query(usersRef, where("email", "==", email));
-    const existingSnapshot = await getDocs(emailQuery);
-    if (!existingSnapshot.empty) {
-      alert("Email already registered.");
-      return;
-    }
+    const telegramQuery = query(usersRef, where("telegram", "==", telegram));
+const existingSnapshot = await getDocs(telegramQuery);
+if (!existingSnapshot.empty) {
+  alert("Telegram username already registered.");
+  return;
+}
 
     const referralCodeGenerated = generateCode();
 
@@ -84,7 +89,7 @@ const Signup: React.FC = () => {
     }
 
     await addDoc(usersRef, {
-      email,
+      telegram,
       referralCode: referralCodeGenerated,
       referredBy: referralCode || null,
       position: currentPosition,
@@ -103,13 +108,13 @@ const Signup: React.FC = () => {
         </h2>
         <form onSubmit={handleSignup} className="space-y-4">
           <input
-            type="email"
-            placeholder="Enter email"
-            required
-            className="w-full px-3 py-2 text-black rounded"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
+  type="text"
+  placeholder="Enter Telegram username (e.g., @username)"
+  required
+  className="w-full px-3 py-2 text-black rounded"
+  value={telegram}
+  onChange={(e) => setTelegram(e.target.value)}
+/>
           <input
             type="text"
             placeholder="Referral code (optional)"
@@ -128,7 +133,7 @@ const Signup: React.FC = () => {
         {position !== null && (
           <div className="mt-6 text-left bg-black/50 p-4 rounded text-sm space-y-2">
             <p>
-              ✅ <strong>Email:</strong> {email}
+              ✅ <strong>Telegram Username:</strong> {telegram}
             </p>
             <p>
               🧾 <strong>Your Position:</strong> {position}
@@ -146,11 +151,13 @@ const Signup: React.FC = () => {
   <h3 className="text-[#ff003c] font-bold text-lg mb-2">🏁 Live Waitlist Standings</h3>
   <ul className="space-y-2 text-sm text-white">
     {standings.map((entry, index) => (
-      <li key={index} className="flex justify-between">
-        <span>{index + 1}. {entry.email}</span>
-        <span className="text-cyan-400">#{entry.position}</span>
-      </li>
-    ))}
+  <li key={index} className="flex justify-between">
+    <span>
+      {index + 1}. {obfuscate(entry.telegram)}
+    </span>
+    <span className="text-cyan-400">#{entry.position}</span>
+  </li>
+))}
   </ul>
 </div>
       </div>

@@ -29,23 +29,23 @@ function Header() {
           </div>
 
           {/* Navigation for large screens */}
-          <nav className="hidden lg:flex space-x-8 relative top-3">
+          <nav className="hidden lg:flex space-x-8 relative top-3 ">
             <div className="flex space-x-4 border border-[#7f0c21] px-4 py-1">
               {navItems.map((item, index) => (
                 <Button
                   key={index}
                   variant={item.active ? "default" : "ghost"}
-                  className={`text-xl tracking-wider ${
-                    item.active
-                      ? "bg-[#7f0c21] text-white font-inter text-xl"
-                      : "text-[#7f0c21]"
-                  }`}
+                  className={`
+    text-xl tracking-wider font-inter font-bold
+    ${item.active ? "text-white" : "text-[#7f0c21] hover:text-white"} 
+    bg-transparent hover:bg-transparent border-none
+  `}
                 >
                   {item.text}
                 </Button>
               ))}
             </div>
-            <Button className="tracking-wider bg-[#cc0c34] text-white rounded-none font-inter text-xl relative top-1">
+            <Button className="tracking-wider bg-[#cc0c34] text-white rounded-none font-inter text-xl relative top-1 hover:bg-transparent">
               Get Started
             </Button>
           </nav>

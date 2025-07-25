@@ -30,6 +30,24 @@ export const Frame = (): JSX.Element => {
     HOVER_INPUT
   );
 
+
+
+
+
+
+const adjectives = ["Simplest", "Safest", "Fastest"];
+const [currentAdjectiveIndex, setCurrentAdjectiveIndex] = useState(0);
+
+useEffect(() => {
+  const interval = setInterval(() => {
+    setCurrentAdjectiveIndex((prevIndex) => (prevIndex + 1) % adjectives.length);
+  }, 1000);
+
+  return () => clearInterval(interval);
+}, []);
+
+const animatedText = adjectives[currentAdjectiveIndex];
+
 //date and time 
 const [currentTime, setCurrentTime] = useState(new Date());
 
@@ -187,15 +205,12 @@ def terminate_service():
         className="w-2/3 max-w-[200px] sm:max-w-md sm:w-full"
       />
 
-      <div className="mt-6 text-[#7f0c21] text-2xl lg:text-2xl">
-        Lorem ipsum&nbsp;&nbsp;v 1234
+      <div className="mt-6 text-[#7f0c21] text-2xl lg:text-2xl font-inter transition-all duration-500 ease-in-out">
+        The <span className="text-[#ff003c] font-semibold text-underline">{animatedText}</span> Telegram Trading Bot on Avalanche
       </div>
 
       <div className="mt-4 text-[#7f0c21] text-sm sm:text-lg max-w-sm sm:max-w-lg">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Quis ipsum
-        suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan
-        lacus vel facilisis.
+        Welcome to Shred.bot .Your one and only go to bot to dominate on the Avalanche Chain. Snipe upcoming launches or trade tokens that are already live ; Shred is here to make you those big boy diamonds
       </div>
     </div>
 
