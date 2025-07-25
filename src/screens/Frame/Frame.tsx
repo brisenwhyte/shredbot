@@ -10,6 +10,7 @@ import Features from "../../components/ui/features";
 import { Menu, X } from "lucide-react";
 import Header from "../../components/ui/Header";
 import Signup from "../../components/ui/Signup";
+import HowItWorksCarousel from "../../components/ui/imageswiper";
 
 
 
@@ -210,7 +211,7 @@ def terminate_service():
       </div>
 
       <div className="mt-4 text-[#7f0c21] text-sm sm:text-lg max-w-sm sm:max-w-lg">
-        Welcome to Shred.bot .Your one and only go to bot to dominate on the Avalanche Chain. Snipe upcoming launches or trade tokens that are already live ; Shred is here to make you those big boy diamonds
+        Welcome to Shred.bot Your one and only goto bot to dominate on the Avalanche Chain  Snipe upcoming launches or trade tokens that are already live ; Shred is here to make you those big boy diamonds
       </div>
     </div>
 
@@ -313,7 +314,7 @@ def terminate_service():
   </div>
 
   {/* Main Pink Box with Lorem Ipsum Text - modified for mobile */}
-  <div className="bg-[#ca0f30] text-white w-auto min-h-96 px-1 relative z-5 border-2 border-[#05FCFB] mx-4 sm:mx-2 md:w-3/4">
+  <div className="bg-[#ca0f30] text-white w-auto min-h-96 px-1 relative z-5  mx-4 sm:mx-2 md:w-3/4">
     <div className="border-b border-[#05FCFB] w-full flex justify-between items-center px-2 py-1">
       <h2 className="text-[#00bcd4] font-inter text-lg tracking-wider sm:text-base">About.exe</h2>
       <button className="text-[#00bcd4] font-inter text-xl sm:text-lg">X</button>
@@ -326,7 +327,7 @@ def terminate_service():
           <p className="text-xs font-inter leading-relaxed opacity-90 sm:text-lg sm:leading-snug">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
           </p>
-          <button className="border border-white px-4 py-1 tracking-wide font-inter text-xs hover:bg-white hover:text-[#e91e63] transition-colors sm:px-2 sm:py-0.5 sm:text-lg">
+          <button className="border border-white px-4 py-1 tracking-wide font-inter text-xs  hover:border-none hover:bg-none transition-colors duration-300 ease-out sm:px-2 sm:py-0.5 sm:text-lg">
             Lorem ipsum
           </button>
         </div>
@@ -383,6 +384,10 @@ def terminate_service():
 </div>
   </div>
   </div>
+  <div className="flex justify-center items-center relative mt-16">
+      <HowItWorksCarousel
+      />
+  </div>
 </section>
 <div className="h-16"></div> 
 
@@ -392,7 +397,7 @@ def terminate_service():
   <div className="flex justify-between items-start">
     {/* Left Block */}
     <div className="w-1/3 flex flex-col items-start">
-      <h2 className="text-[#7f0c21] font-inter text-lg mb-8">Disk: Disk 2</h2>
+      <h4 className="text-[#7f0c21] font-inter text-md sm:text-4xl mb-8">Disk: Disk 2</h4>
       <div className="relative text-[#7f0c21] font-inter text-lg transform rotate-90 origin-left ">
         4e6576657220676f6e6e61206c657420796f7520646f776e
       </div>
@@ -405,7 +410,7 @@ def terminate_service():
 
     {/* Right Block */}
     <div className="w-1/3 flex flex-col items-end">
-      <h4 className="text-[#7f0c21] font-inter text-lg  mb-8">Escape: Add Files</h4>
+      <h4 className="text-[#7f0c21] font-inter text-md sm:text-4xl  mb-8">Escape: Files</h4>
       <div className="text-[#7f0c21] font-inter text-lg transform -rotate-90 origin-right">
         4e6576657220676f6e6e61206c657420796f7520646f776e
       </div>

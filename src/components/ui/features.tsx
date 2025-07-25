@@ -101,7 +101,7 @@ const Features = () => {
             </div>
 
             {/* Right side box */}
-            <div className="flex items-end relative -top-44 left-20 md:top-12 mt-4 md:mt-0">
+            <div className="flex items-end relative -top-44 left-32 sm:left-0 md:top-12 mt-4 md:mt-0">
               <div className="w-2 md:w-3 px-12 md:px-24 py-16 md:py-36 bg-[#0abbbd]"></div>
             </div>
           </div>

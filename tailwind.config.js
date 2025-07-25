@@ -6,6 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      rotate: {
+        '135': '135deg',
+      },
       fontSize: {
         xs: ["0.75rem", { lineHeight: "1rem" }],        // 12px
         sm: ["0.875rem", { lineHeight: "1.25rem" }],    // 14px
