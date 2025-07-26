@@ -14,7 +14,7 @@ function Header() {
   return (
     <div className="relative w-full  bg-[#17000d] overflow-x-hidden overflow-y-auto text-white">
       {/* Header Navigation */}
-      <header className="w-full py-4">
+      <header className="w-full pb-4">
         <img
           className="border-b border-[#7f0c21]/30 pb-4"
           alt="Eht"

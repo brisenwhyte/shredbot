@@ -67,7 +67,7 @@ const HowItWorksCarousel: React.FC = () => {
   return (
     <div className='container mt-12 px-4 sm:px-6 lg:px-8'>
       <h2 className="text-[#ff003c] text-3xl sm:text-4xl lg:text-5xl font-inter text-center mb-12 tracking-tight">
-        How Shred Works
+        Shred Bot
       </h2>
       
       <div className="relative max-w-6xl mx-auto" style={{ '--n': n, '--k': currentIndex } as React.CSSProperties}>
@@ -106,7 +106,7 @@ const HowItWorksCarousel: React.FC = () => {
                       <img
                         src={item.image}
                         alt={item.title}
-                        className="w-full h-128 sm:h-[500px] object-fit sm:object-cover transition-transform duration-300 group-hover:scale-110"
+                        className="w-full h-128 lg:h-[500px] object-fit sm:object-cover transition-transform duration-300 group-hover:scale-110"
                         loading="lazy"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#12000a]/80 via-transparent to-transparent"></div>
