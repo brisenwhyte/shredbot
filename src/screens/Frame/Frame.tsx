@@ -188,7 +188,7 @@ export const Frame = (): JSX.Element => {
   </div>
 
   {/* Main Pink Box with Lorem Ipsum Text - modified for mobile */}
-  <div className="bg-[#ca0f30] text-white w-auto min-h-96 px-1 relative z-5  mx-4 sm:mx-2 md:w-3/4">
+  <div className="bg-[#ca0f30] text-white w-auto min-h-96 px-1 relative z-5  ml-8 sm:ml-0 md:w-3/4">
     <div className="border-b border-[#05FCFB] w-full flex justify-between items-center px-2 py-1">
       <h2 className="text-[#00bcd4] font-inter text-lg tracking-wider sm:text-base">About.exe</h2>
       <button className="text-[#00bcd4] font-inter text-xl sm:text-lg">X</button>
