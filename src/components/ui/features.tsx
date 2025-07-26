@@ -87,23 +87,9 @@ const Features = () => {
                 <img src="7oI.png" alt="" className="w-32 md:w-64 h-32 md:h-64 object-contain" />
                 <div className="bg-[#0abbbd] px-12 md:px-36 py-8 md:py-16"></div>
               </div>
-              <div className=" font-inter text-xs mt-2 md:mt-4 overflow-x-auto relative top-8 md:top-0">
-                <div className="text-[#0abbbd] flex justify-between min-w-[300px]">
-                  <span>BTC/USDT------------------------------------------------------100000</span>
-                </div>
-                <div className="text-[#0abbbd] flex justify-between min-w-[300px]">
-                  <span>ETH/USDT--------------------------------------------------------- 2500</span>
-                </div>
-                <div className="text-[#0abbbd] flex justify-between min-w-[300px]">
-                  <span>AVAX/USDT---------------------------------------------------------20</span>
-                </div>
-              </div>
             </div>
 
             {/* Right side box */}
-            <div className="flex items-end relative -top-44 left-32 sm:left-0 md:top-12 mt-4 md:mt-0">
-              <div className="w-2 md:w-3 px-12 md:px-24 py-16 md:py-36 bg-[#0abbbd]"></div>
-            </div>
           </div>
         </div>
       </section>
