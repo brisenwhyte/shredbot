@@ -164,13 +164,13 @@ export const Frame = (): JSX.Element => {
     </div>
 
     {/* Right Side - Time Info */}
-    <div className="text-right w-1/2 text-[#8d3030]  font-bold tracking-widest leading-relaxed">
-      <div>{day}</div>
-      <div className="flex justify-end gap-4">
-        <span>{date}</span>
-        <span>{time}</span>
-      </div>
-    </div>
+   <div className="flex flex-col items-end w-1/2 text-[#8d3030] font-bold tracking-widest leading-relaxed">
+  <div>{day}</div>
+  
+    <span>{date}</span>
+    <span>{time}</span>
+  
+</div>
   </div>
 
 {/* Additional Pink Boxes Section */}
